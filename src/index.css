@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-tv-bg: #0a0a0a;
+  --color-tv-surface: #1a1a1a;
+  --color-tv-accent: #3b82f6;
+}
+
+@layer base {
+  body {
+    @apply bg-tv-bg text-white overflow-hidden select-none;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Optimize for slow hardware */
+  * {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+.tv-focus {
+  @apply transition-transform duration-150 ease-out;
+  will-change: transform;
+}
+
+.tv-focus:focus-within,
+.tv-focus.focused {
+  @apply ring-4 ring-tv-accent scale-105 z-10 shadow-2xl shadow-tv-accent/20;
+}

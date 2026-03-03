@@ -1,0 +1,5 @@
+{
+  "name": "Vortex IPTV Player",
+  "description": "A professional IPTV player for Smart TVs with support for M3U playlists and Xtream Codes API.",
+  "requestFramePermissions": []
+}
